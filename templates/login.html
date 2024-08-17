@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            color: #333;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            color: #ff9800;
+            flex-shrink: 0;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #00796b;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #004d40;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 80px);
+            text-align: center;
+            padding: 20px;
+        }
+        .hero-content {
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        .hero-content h2 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+        .hero-content h3 {
+            font-size: 24px;
+            color: #3f51b5;
+            margin: 10px 0;
+        }
+        .hero img {
+            border-radius: 50%;
+            width: 300px;
+            height: auto;
+        }
+        .button {
+            background-color: #3f51b5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #303f9f;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+        }
+        .modal h2 {
+            margin-bottom: 20px;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .footer-links {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #888;
+        }
+        .login-btn {
+            margin-right: 30px;
+        }
+        .sing-up-btn {
+            background-color: #fbb034;
+        }
+        @media (min-width: 600px) {
+            .hero {
+                flex-direction: row;
+                padding: 40px;
+            }
+            .hero img {
+                margin-left: 20px;
+            }
+        }
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+            nav a, .button {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            .hero img {
+                width: 250px;
+            }
+            .hero-content h2 {
+                font-size: 28px;
+            }
+            .hero-content h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hiralal'...<p>Site</p></h1>
+        <nav>
+            <button onclick="openModal()" class="button">Login</button>
+            <a href="#">Home</a>
+            <a href="#">New Courses</a>
+            <a href="#">Log in</a>
+            <button class="button btn-">Sign up</button>
+        </nav>
+    </header>
+    <div class="hero">
+        <div class="hero-content">
+            <h2>Learn & become the</h2>
+            <h3>Top 1% software developer</h3>
+            <p>Delta - Web Development</p>
+            <button class="button">Explore New Courses</button>
+        </div>
+        <img src="https://img.freepik.com/premium-vector/illustration-programmer-computer-vector-technology-concept-web-digital-design-programming_1013341-205339.jpg?w=740" alt="Student Image">
+    </div>
+    <form action="" method="post">
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <h2>Login or Sign Up to Start Learning</h2>
+                <input type="email" placeholder="What's your e-mail?" required>
+                <input type="password" placeholder="Your password?" required>
+                <button onclick="login()" class="button">Login</button>
+                <div class="footer-links">
+                    <a href="#">Create Account</a> | <a href="#">Forgot your password?</a>
+                </div>
+            </div>
+        </div>
+    </form>    
+    <script>
+        function openModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function login() {
+            alert("Login functionality is not implemented yet.");
+        }
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
